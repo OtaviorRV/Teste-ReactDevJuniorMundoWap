@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import { ModalStyled, ButtonModal } from "./Modal.Styled";
-
-import { useForm, SubmitHandler } from "react-hook-form";
+import { ButtonModal, ModalStyled } from "./Modal.Styled";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useTaskContext } from "../../providers/TaskProvider";
 import { getRandomTask } from "../../services/TaskService";
 import { ITask } from "../../types/task";
-import { useTaskContext } from "../../providers/TaskProvider";
 
 interface IModal {
   isOpen: boolean;
@@ -34,7 +33,7 @@ const Modal = ({ isOpen, onClose, task }: IModal) => {
     if (isOpen && task) {
       setValue(`activity`, task.activity);
     }
-  }, [isOpen, task]);
+  }, [reset,setValue,isOpen, task]);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     if (!task) {

@@ -1,5 +1,4 @@
-import { useContext, useEffect } from "react";
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 import Modal from "../components/modal/Modal";
 
 export interface ITask {
@@ -106,3 +105,4 @@ const useTaskContext = (): ITaskProvider => useContext(TaskContext);
 
 export default TaskProvider;
 export { useTaskContext };
+

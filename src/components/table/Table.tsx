@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react";
-import { TableStyled, TrTaskStyled } from "./Table.Styled";
-import Checkbox from "./InputCheckbox/InputCheckbox";
+import { useMemo } from "react";
 import { useTaskContext } from "../../providers/TaskProvider";
 import { formatDate } from "../../utils/helpers";
+import Checkbox from "./InputCheckbox/InputCheckbox";
+import { TableStyled, TrTaskStyled } from "./Table.Styled";
 
 interface IColumn {
   Header: string;
@@ -12,7 +12,7 @@ interface IColumn {
 }
 
 const TableTask = () => {
-  const { tasks, selectTask, deleteTask, insertTask, openModal } =
+  const { tasks, selectTask, openModal } =
     useTaskContext();
 
   const headers = useMemo<IColumn>(
